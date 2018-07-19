@@ -1,0 +1,161 @@
+.player-page {
+	width: 700px;
+	position: relative;
+	margin: auto;
+	margin-top: 60px;
+
+	.caption {
+		font-size: 16px;
+		color: rgb(47, 152, 66);
+	}
+
+	.cover {
+		width: 180px;
+		height: 180px;
+		margin-left: 20px;
+
+		img {
+			width: 180px;
+			height: 180px;
+			border-radius: 50%;
+		}
+		img.play1 {
+			animation: cover_rotate1 20s infinite 0s linear;
+		}
+		img.play2 {
+			animation: cover_rotate2 20s infinite 0s linear;
+		}
+		img.pause {
+			animation: none;
+		}
+		@keyframes cover_rotate1 {
+		  0%{
+		  	transform: rotate(0deg);
+		  }
+		  100%{
+		  	transform: rotate(359deg);
+		  }
+		}
+		@keyframes cover_rotate2 {
+		  0%{
+		  	transform: rotate(0deg);
+		  }
+		  100%{
+		  	transform: rotate(359deg);
+		  }
+		}
+	}
+	.volume-container {
+		position: relative;
+		left: 20px;
+		top: -3px;
+
+		.volume-wrapper {
+			opacity: 0;
+			transition: opacity .5s linear;
+		}
+
+		&:hover .volume-wrapper {
+			opacity: 1;
+		}
+	}
+
+	.music-title {
+	    font-size: 25px;
+	    font-weight: 400;
+	    color: rgb(3, 3, 3);
+	    height: 36px;
+	    line-height: 36px;
+	}
+	.music-artist {
+		font-size: 15px;
+	    font-weight: 400;
+	    color: rgb(74, 74, 74);
+    }
+    .left-time, .right-time {
+    	font-size: 14px;
+    	color: #999;
+    	font-weight: 400;
+    	width: 40px;
+    }
+    .icon {
+    	cursor: pointer;
+    }
+    .ml20 {
+    	margin-left: 20px;
+    }
+    .mt35 {
+    	margin-top: 35px;
+    }
+    .volume-wrapper {
+    	width: 60px;
+    	display: inline-block;
+    }
+
+    .lrc-control {
+    	position: relative;
+    	color: #040404;
+    	font-size: 24px;
+    	font-weight: bold;
+    	margin-right: 15px;
+    	cursor: pointer;
+
+    	&.false{
+    		color: #999;
+
+    		&:before{
+				content: '';
+				display: block;
+				width: 140%;
+				height: 2px;
+				position: absolute;
+				left: -14%;
+				top: 47%;
+				z-index: 1;
+				background-color: #5d5c5c;
+				transform: rotate(45deg);
+    		}
+    	}
+    }
+
+    .music-words {
+    	width: 700px;
+    	height: 150px;
+    	overflow: hidden;
+    	position: relative;
+        color: rgb(74, 74, 74);
+        background-color: #eee;
+        // margin: 0 auto;
+        &.show {
+        	opacity: 1;
+        }
+        &.hidden {
+        	opacity: 0;
+        }
+    	ul {
+    		padding-top: 30px;
+
+    		li {
+    			line-height: 52px;
+    			font-size: 20px;
+    			text-align: center;
+
+    			&.hover {
+    				color: #f04454;
+    				font-weight: bold;
+    			}
+    		}
+    	}
+    }
+
+    #lrc_tishi {
+    	width: 100%;
+    	line-height: 80px;
+    	font-size: 30px;
+    	text-align: center;
+    	position: absolute;
+    	left: 0;
+    	top: 35px;
+    	z-index: 1;
+    }
+}
